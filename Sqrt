@@ -1,0 +1,19 @@
+class Solution {
+    unsigned sq(unsigned i,unsigned n)
+    {
+        if(i*i==n) return i;
+        if(i*i>n)  return i-1;
+        else
+        return sq(++i,n);
+
+    }
+    
+public:
+    int mySqrt(int x) {
+         if(x==0) return 0;
+        if(x==1) return 1;
+          unsigned i=2;
+          return sq(i,x);
+       
+    }
+};
