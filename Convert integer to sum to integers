@@ -1,0 +1,24 @@
+class Solution {
+public:
+int countzero(int i)
+{
+    int cnt=0;
+    while(i)
+    {
+        if(i%10==0) cnt++;
+        i=i/10;
+    }
+    return cnt;
+}
+    vector<int> getNoZeroIntegers(int n) {
+        for(int j=1;j<=n/2;j++)
+        {
+            if(countzero(j)==0&&countzero(n-j)==0)
+            return {j,n-j};
+        }
+    
+     return {};   
+    }
+    
+   
+};
