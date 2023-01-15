@@ -1,0 +1,13 @@
+class Solution {
+public:
+    long long waysToBuyPensPencils(int total, int cost1, int cost2) {
+       long long cnt=0;
+        for(long long i=0;i<=total/cost1;i++){
+            if(total>=cost1*i){
+                cnt=cnt+(total-cost1*i)/cost2+1;
+            }
+
+        }
+        return cnt;
+    }
+};
