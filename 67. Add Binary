@@ -1,0 +1,14 @@
+class Solution {
+public:
+    int finalValueAfterOperations(vector<string>& operations) {
+        int n=operations.size()-1;
+         int cnt=0;
+        while(n>=0)
+        {
+            if(operations[n]=="--X"||operations[n]=="X--") cnt--;
+            else cnt++;
+            n--;
+        }
+        return cnt;
+    }
+};
