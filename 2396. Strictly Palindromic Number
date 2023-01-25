@@ -1,0 +1,45 @@
+class Solution {
+public:
+    string convertbase(int n,int b)
+    {  string s;
+     
+       while(n>0){
+           
+           s+=n%b;
+           n=n/b;
+
+       }
+    
+       return s;
+    }
+
+
+    bool checkPalindromic(string s)
+    {   
+       int i=0;
+       int j=s.size()-1;
+       while(i<j)
+       {
+           if(s[i]!=s[j]) return false;
+           i++;
+           j--;
+       }
+       return true;
+    
+    }
+
+
+    bool isStrictlyPalindromic(int n) {
+        
+        int ans=0;
+        string s1;
+        for(int i=2;i<=n-2;i++) 
+        {
+          s1=convertbase(n,i);
+          if(checkPalindromic(s1)!=true) return false;
+
+        }
+        return true;
+    }
+    
+};
