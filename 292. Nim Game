@@ -1,0 +1,15 @@
+class Solution {
+public:
+    bool canWinNim(int n) {
+
+        while(n)
+        {
+            if(n<=3){
+            return true;
+            }
+             else n=n-4;
+
+         }
+         return false;
+    }
+};
