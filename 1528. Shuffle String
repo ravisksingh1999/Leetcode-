@@ -1,0 +1,17 @@
+class Solution {
+public:
+    string restoreString(string s, vector<int>& indices) {
+        string sn1;
+        int n=indices.size();
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+                if(indices[j]==i)
+                sn1+=s[j];
+            }
+        }
+        return sn1;
+        
+    }
+};
