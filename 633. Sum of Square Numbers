@@ -1,0 +1,15 @@
+class Solution {
+public:
+    bool judgeSquareSum(int c) {
+        if (c==1) return true;
+
+        long  long s=0, e=sqrt(c);
+        while(s<=e)
+        {    long long p=e*e+s*s;
+            if(c==p) return true;
+            else if(e*e +s*s>c) e--;
+            else s++;
+        }
+     return false;
+    }
+};
