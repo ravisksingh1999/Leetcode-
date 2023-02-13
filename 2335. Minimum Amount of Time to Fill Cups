@@ -1,0 +1,25 @@
+class Solution {
+public:
+    int fillCups(vector<int>& amount) {
+        if(amount[0]==0 && amount[1]==0 && amount[2]==0) return 0;
+         int ans=0;
+
+        while(1)
+        {
+            sort(amount.begin(),amount.end());
+            if(amount[1]==0){
+            ans+=amount[2];
+            break;
+            }
+            else
+            {
+                ans+=1;
+                amount[1]-=1;
+                amount[2]-=1;
+            }
+            
+
+        }
+       return ans;
+    }
+};
