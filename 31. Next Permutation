@@ -1,0 +1,39 @@
+class Solution {
+public:
+    void nextPermutation(vector<int>& nums) {
+        int i=nums.size()-1;
+        int j=nums.size()-1;
+        int p=0,q=0;
+        for(int k=i; k>0; k--)
+        {
+            if(nums[k-1]<nums[k])
+            {
+             i=k;
+             p++;
+             break;
+            }
+            
+        }
+        if(p==0)
+        {
+            reverse(nums.begin(),nums.end());
+            return;
+        }
+         for(int k=j; k>0; k--)
+        {
+            if(nums[i-1]<nums[k])
+            {
+             j=k;
+             q++;
+             break;
+            }
+            
+        }
+        
+        
+         swap(nums[i-1],nums[j]);
+        reverse(nums.begin()+i,nums.end());
+
+         
+    }
+};
