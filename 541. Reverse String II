@@ -1,0 +1,48 @@
+class Solution {
+public:
+    string reverseStr(string s, int k) {
+         int t=s.length()/k;
+          
+         if(t==0) {
+             reverse(s.begin(),s.end());
+             return s;
+         }
+         int p=t;
+          int i=0;
+        for(int x=0; x<t; x++)
+        {
+          
+            if(x%2==0)
+              {
+               int j=i;
+               int l=i+k-1;
+                      while(j<l)
+                     {
+                     swap(s[j],s[l]);
+                      j++;
+                     l--;
+                     
+                     }
+                    
+                        i=i+k;
+                        
+                 }
+                else
+                {
+                 i=i+k;
+                }
+        }
+        if(p%2==0)
+        {
+            int j=i;
+             int l=s.length()-1;
+           while(j<l) 
+           {
+              swap(s[j],s[l]);
+               j++;
+               l--;
+           }
+        }
+     return s;
+    }
+};
