@@ -1,0 +1,21 @@
+class Solution {
+public:
+    int firstUniqChar(string s) {
+        if(s.size()==1) return 0;
+        int cnt=0;
+        for(int i=0; i<s.size(); i++)
+        {   cnt=0;
+            for(int j=0; j<s.size(); j++)
+            {
+                if(s[i]==s[j])
+                cnt++;
+                if(cnt>1) break;
+
+            }
+            if(cnt==1) return i;
+
+        }
+        return -1;
+        
+    }
+};
