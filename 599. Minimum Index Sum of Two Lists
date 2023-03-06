@@ -1,0 +1,36 @@
+class Solution {
+public:
+    vector<string> findRestaurant(vector<string>& list1, vector<string>& list2) {
+
+        vector<string> ans;
+        vector<pair<int,int >> v;
+        int li=list1.size();
+        
+        for(int i=0; i<list1.size(); i++)
+        {
+            for(int j=0; j<list2.size(); j++)
+            {
+                if(list1[i]==list2[j])
+                {
+                   v.push_back({(i+j),i});
+                }
+
+           }
+        }
+
+        sort(v.begin(),v.end());
+        ans.push_back(list1[v[0].second]);
+
+
+        for(int i=1; i<v.size(); i++)
+        {
+            if(v[i].first!=v[i-1].first)
+            break;
+            else
+            {
+               ans.push_back(list1[v[i].second]);  
+            }
+        }
+      return ans;  
+    }
+};
