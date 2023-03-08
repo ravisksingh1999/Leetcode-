@@ -1,0 +1,25 @@
+class Solution {
+public:
+    int maximumValue(vector<string>& srts) {
+        
+        int maxi=0;
+
+        for(int i=0; i<srts.size(); i++)
+        {
+            int n=0;
+            for(int j=0; j<srts[i].size(); j++ )
+            {
+                if(srts[i][j]-'0'>=0 && srts[i][j]-'0'<=9)
+                n=n*10+srts[i][j]-'0';
+                
+                else
+                {
+                n=srts[i].length();
+                break;
+                }
+            }
+            maxi=max(maxi,n);
+        }
+        return maxi;
+    }
+};
