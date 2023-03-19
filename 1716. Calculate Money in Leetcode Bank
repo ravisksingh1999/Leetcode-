@@ -1,0 +1,18 @@
+class Solution {
+public:
+    int totalMoney(int n) {
+
+        int p=n/7;
+        int sum=0;
+
+        for(int i=1; i<=p; i++)
+        {
+           sum+=7*0.5*(i+i+6);
+        }
+        int r=n-p*7;
+        sum+=r*0.5*(p+1+p+1+r-1);
+
+
+       return sum; 
+    }
+};
