@@ -1,0 +1,80 @@
+class Solution {
+public:
+    int chk1(char c1 )
+    {
+        return c1=='q' || c1=='w' || c1=='e' || c1=='r' || c1=='t' || c1=='y' || c1=='u' || c1=='i' || c1=='o' || c1=='p';
+
+    }
+    int chk2(char c1)
+    {
+        return c1=='a' || c1=='s' || c1=='d' || c1=='f' || c1=='g' || c1=='h' || c1=='j' || c1=='k' || c1=='l';
+
+    }
+    int chk3(char c1){
+        return c1=='z' || c1=='x' || c1=='c' || c1=='v' || c1=='b' || c1=='n' || c1=='m';
+
+    }
+
+
+
+
+
+
+    vector<string> findWords(vector<string>& words) {
+        vector<string> v;
+       
+       
+
+        for(int i=0; i<words.size(); i++)
+        {
+           string str=words[i]; 
+           bool p=true;
+
+           for(int j=0; j<str.size(); j++)
+           {
+               if(chk1(tolower(str[j]))==0)
+               {
+                   p=false;
+                  break;
+               }
+           }
+           if(p==false)
+           {
+               p=true;
+                for(int j=0; j<str.size(); j++)
+                {
+                 if(chk2(tolower(str[j]))==0)
+                 {
+                   p=false;
+                  break;
+                 }
+                }
+           }
+          if(p==false)
+           {
+               p=true;
+                for(int j=0; j<str.size(); j++)
+                   {
+                    if(chk3(tolower(str[j]))==0)
+                     {
+                     p=false;
+                     break;
+                     }
+                   }
+           }
+
+
+           if(p==true)
+           {
+            v.push_back(words[i]);
+
+           }
+            
+        }
+        
+    
+
+        return v;
+        
+    }
+};
