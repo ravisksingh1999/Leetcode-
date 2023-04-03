@@ -1,0 +1,40 @@
+class Solution {
+public:
+    int bestClosingTime(string customers) {
+
+       int cnt=0;
+       
+        for(int i=0; i<customers.size(); i++)
+        {
+            if(customers[i]=='Y')
+            cnt++;
+        }
+        int penalty=cnt;
+        int ans=0;
+    
+        for(int i=0; i<=customers.size(); i++)
+        {
+            if(customers[i]=='Y')
+             {
+                 if(penalty<cnt)
+                 {
+                     ans=i;
+                     cnt=penalty;
+                 }
+                 penalty--;
+             }
+             else
+             {
+                 if(penalty<cnt)
+                 {
+                     ans=i;
+                     cnt=penalty;
+                 }
+                 penalty++;
+             }
+
+
+        }
+        return ans;
+    }
+};
